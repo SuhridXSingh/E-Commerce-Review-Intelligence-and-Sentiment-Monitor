@@ -19,3 +19,6 @@ models/*.joblib
 # OS files
 .DS_Store
 Thumbs.db
+
+#Local Project Context and blueprint
+CONTEXT_LOG.md
