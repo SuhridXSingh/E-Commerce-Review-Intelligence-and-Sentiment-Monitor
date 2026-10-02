@@ -1,7 +1,7 @@
 # CONTEXT_LOG.md — E-Commerce Review Intelligence & Sentiment Monitor
 
 > **Purpose:** Persistent session memory for AI tutor–student pair-programming.  
-> **Last Updated:** 2026-10-02 | Milestone 0 (Initialization)
+> **Last Updated:** 2026-10-02 | Milestone 1 (Complete)
 
 ---
 
@@ -18,28 +18,28 @@ The AI tutor (Antigravity / any successor agent) MUST follow these rules at all 
 
 ## 📌 Current Phase & Active Module
 
-- **Phase:** 0 — Project Initialization
-- **Active Module:** None yet (setting up environment & folder structure)
+- **Phase:** 1 — Milestone 1 Complete ✅
+- **Active Module:** Moving to Milestone 2 (OOP Data Models & Collectors)
 
 ---
 
 ## 📚 Syllabus Checklist
 
 ### UNIT I — Foundations
-- [ ] Python Environment Setup (virtualenv, project structure)
+- [x] Python Environment Setup (virtualenv, project structure)
 - [ ] Variables & Data Types
 - [ ] Control Structures (if/elif/else, loops)
 - [ ] Functions & Scope (def, return, local/global)
 - [ ] Basic File I/O (open, read, write)
 - [ ] Context Managers (with statement, `__enter__`/`__exit__`)
-- [ ] Basic Error Handling (try/except/else)
+- [x] Basic Error Handling (try/except/else)
 
 ### UNIT II — Intermediate Python
 - [ ] Advanced Functions (*args, **kwargs, lambda, map/filter/reduce)
 - [ ] OOP — Classes, Objects, `__init__`
 - [ ] OOP — Inheritance
 - [ ] OOP — Encapsulation (public/private, properties)
-- [ ] Advanced Exception Handling — Custom Exceptions
+- [x] Advanced Exception Handling — Custom Exceptions
 - [ ] Advanced Exception Handling — finally, raise, exception chaining
 
 ### UNIT III — Data & AI Libraries
@@ -60,8 +60,8 @@ The AI tutor (Antigravity / any successor agent) MUST follow these rules at all 
 - [ ] Fitting Classifiers
 - [ ] Model Persistence (pickle / joblib)
 - [ ] NLP — nltk tokenization, stopwords, stemming
-- [ ] Best Practices — logging
-- [ ] Best Practices — virtualenv
+- [x] Best Practices — logging
+- [x] Best Practices — virtualenv
 
 ---
 
@@ -80,8 +80,8 @@ The AI tutor (Antigravity / any successor agent) MUST follow these rules at all 
 
 | Stage | Milestone | Status |
 |-------|-----------|--------|
-| 1 | Environment setup, folder layout, logging config, custom exceptions | 🔜 Next |
-| 2 | OOP-based Review data models & collectors (API + scraper stubs) | ⬜ |
+| 1 | Environment setup, folder layout, logging config, custom exceptions | ✅ Done |
+| 2 | OOP-based Review data models & collectors (API + scraper stubs) | 🔜 Next |
 | 3 | SQLite storage layer (CRUD operations) | ⬜ |
 | 4 | CSV/JSON import-export utilities | ⬜ |
 | 5 | NLTK NLP preprocessing pipeline | ⬜ |
@@ -94,17 +94,18 @@ The AI tutor (Antigravity / any successor agent) MUST follow these rules at all 
 
 ## ➡️ Next Immediate Milestone
 
-**Milestone 1 — Environment Setup, Folder Layout, Custom Exceptions**
+**Milestone 2 — OOP Data Models & Collectors**
 
 The student should:
-1. Create a virtual environment and `requirements.txt`.
-2. Set up the project folder structure (see Milestone 1 guidance in chat).
-3. Create a custom exceptions module (`exceptions.py`).
-4. Create a basic logging configuration module (`logger.py`).
-5. Write a minimal `main.py` entry point that tests logging and exception raising.
+1. Create a `Review` data class in `core/models.py` using OOP (`__init__`, `__str__`, `__repr__`, encapsulation).
+2. Create a base `BaseCollector` class in `collectors/base.py` with abstract-style methods.
+3. Create `APICollector` in `collectors/api_collector.py` (inherits BaseCollector, uses `requests`).
+4. Create `WebScraper` in `collectors/scraper.py` (inherits BaseCollector, uses `BeautifulSoup`).
+5. Both collectors should use `*args`/`**kwargs`, the custom exception hierarchy, and logging.
 
 ---
 
 ## 📝 Session Notes
 
 - **2026-10-02:** Project initialized. CONTEXT_LOG.md created. Milestone 1 guidance delivered.
+- **2026-10-02:** Milestone 1 COMPLETE. Custom exception hierarchy built (BaseAppException + 8 children). Logger module with dual handlers (console + file). Smoke test passed — logging, exception raising, and catching all verified working.
